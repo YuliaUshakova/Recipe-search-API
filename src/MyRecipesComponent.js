@@ -1,8 +1,9 @@
-function MyRecipesComponent({label, ingredients, image, calories}) {
+function MyRecipesComponent({label, ingredients, calories, image, dishType, mealType}) {
    
     return (<div>
-    <div className="container">
+    <div className="container column">
         <h2>{label}</h2>
+        <h4>Category: {dishType}, {mealType}</h4>
         </div>
 
     <div className="container search">
@@ -10,13 +11,14 @@ function MyRecipesComponent({label, ingredients, image, calories}) {
         </div>
 
         <ul className="list">
+            <h3> <img src="https://img.icons8.com/external-bearicons-gradient-bearicons/64/000000/external-Recipe-cooking-bearicons-gradient-bearicons.png"/>Ingredients ({calories.toFixed()}kcal)</h3>
             {ingredients.map(ingredient => (
-            <li><span><img src="https://img.icons8.com/doodle/48/000000/checkmark.png" className="icon" alt="tick"/>{ingredient}</span></li>
+            <li>{ingredient}</li>
             ))}
         </ul>
         
         <div className="container">
-        <p className="par">{calories.toFixed()} calories</p>
+       
         </div>
    
     </div>)

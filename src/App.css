@@ -28,7 +28,8 @@ video{
   color: #575756;
   background-color: transparent;
   margin-left: 0px;
-  box-shadow: inset 0px 0px 0px 4px #ddd6e8;
+  /* box-shadow: inset 0px 0px 0px 4px #ddd6e8; */
+ 
 }
 
 .column{
@@ -41,9 +42,9 @@ video{
 .tasty {
   width:200px;
   height: 200px;
-  /* border: #fff double 15px;
-  border-radius: 50%; */
-  border: none;
+  border: #fff double 15px;
+  border-radius: 50%;
+ 
 }
 .icon{
   width: 32px;
@@ -53,8 +54,7 @@ video{
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-}
+  }
 
 h1, h2, ul, p{
   font-family: 'Open Sans', sans-serif;
@@ -71,6 +71,7 @@ li {
   padding: .4em .4em .4em .8em;
   margin: .5em 0 .5em 2.5em;
   background: #ddd6e8;
+  border-radius: 7px;
 }
 
 li:hover {

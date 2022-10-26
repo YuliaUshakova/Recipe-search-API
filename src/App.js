@@ -19,7 +19,7 @@ function App() {
   const finalSearch = (e) => {
     e.preventDefault();
     setWordSubmitted(mySearch);
-  }
+    }
 
   useEffect(() => {
     const getReсipe = async() => {
@@ -29,6 +29,8 @@ function App() {
     setMyRecipes(data.hits)
     }
     getReсipe();
+    mySearch=useState('');
+    setMySearch=useState('');
   }, [wordSubmitted])
 
   return (
@@ -44,18 +46,15 @@ function App() {
   <form onSubmit={finalSearch}>
     <input className="search" placeholder="Search..." onChange={myRecipeSearch} value={mySearch}>
     </input>
-  </form>
-</div>
-
-<div className="container">
-  <button>
+    <button>
     <img src="https://img.icons8.com/glyph-neue/64/000000/search.png" width="20px" className="icons" alt="search"/>
   </button>
+  </form>
 </div>
 
 <div className="column">
 {myRecipes.map(element => (
-  <MyRecipesComponent label={element.recipe.label} ingredients={element.recipe.ingredientLines} image={element.recipe.image} calories={element.recipe.calories} />
+  <MyRecipesComponent label={element.recipe.label} ingredients={element.recipe.ingredientLines} image={element.recipe.image} calories={element.recipe.calories} dishType={element.recipe.dishType} mealType={element.recipe.mealType}/>
 ))}
 </div>
 
