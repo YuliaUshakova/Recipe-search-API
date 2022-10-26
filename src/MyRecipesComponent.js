@@ -11,9 +11,9 @@ function MyRecipesComponent({label, ingredients, calories, image, dishType, meal
         </div>
 
         <ul className="list">
-            <h3> <img src="https://img.icons8.com/external-bearicons-gradient-bearicons/64/000000/external-Recipe-cooking-bearicons-gradient-bearicons.png"/>Ingredients ({calories.toFixed()}kcal)</h3>
-            {ingredients.map(ingredient => (
-            <li>{ingredient}</li>
+            <h3> <img src="https://img.icons8.com/external-bearicons-gradient-bearicons/64/000000/external-Recipe-cooking-bearicons-gradient-bearicons.png" alt="list"/>Ingredients ({calories.toFixed()}kcal)</h3>
+            {ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
             ))}
         </ul>
         

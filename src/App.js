@@ -25,13 +25,10 @@ function App() {
     const getReсipe = async() => {
     const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${wordSubmitted}&app_id=${MY_ID}&app_key=${MY_KEY}`);
     const data = await response.json();
-    console.log(data.hits)
     setMyRecipes(data.hits)
     }
     getReсipe();
-    mySearch=useState('');
-    setMySearch=useState('');
-  }, [wordSubmitted])
+    }, [wordSubmitted])
 
   return (
 <div className="App">
@@ -53,8 +50,15 @@ function App() {
 </div>
 
 <div className="column">
-{myRecipes.map(element => (
-  <MyRecipesComponent label={element.recipe.label} ingredients={element.recipe.ingredientLines} image={element.recipe.image} calories={element.recipe.calories} dishType={element.recipe.dishType} mealType={element.recipe.mealType}/>
+{myRecipes.map((element, index) => (
+  <MyRecipesComponent 
+  key={index}
+  label={element.recipe.label} 
+  ingredients={element.recipe.ingredientLines} 
+  image={element.recipe.image} 
+  calories={element.recipe.calories} 
+  dishType={element.recipe.dishType} 
+  mealType={element.recipe.mealType}/>
 ))}
 </div>
 
