@@ -19,6 +19,7 @@ function App() {
   const finalSearch = (e) => {
     e.preventDefault();
     setWordSubmitted(mySearch);
+    setMySearch('')
     }
 
   useEffect(() => {
